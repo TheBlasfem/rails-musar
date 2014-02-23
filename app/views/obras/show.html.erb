@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @obra.titulo %>
+</p>
+
+
+<p>
+  <%=  image_tag @obra.imagen, :width => 200, :class => "pull-right" %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @obra.autor %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @obra.descripcion %>
+</p>
+
+<p>
+  <strong>Calificacion:</strong>
+  <% @obra.calificacion.times do %>
+    <%= image_tag "star.png" %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_obra_path(@obra) %> |
+<%= link_to 'Back', obras_path %>

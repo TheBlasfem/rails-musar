@@ -1,0 +1,36 @@
+<%= form_for(@obra) do |f| %>
+  <% if @obra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@obra.errors.count, "error") %> prohibited this obra from being saved:</h2>
+
+      <ul>
+      <% @obra.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :autor %><br>
+    <%= f.text_field :autor %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :calificacion %><br>
+    <%= f.number_field :calificacion %>
+  </div>
+  <div class="field">
+    <%= f.file_field :imagen %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
